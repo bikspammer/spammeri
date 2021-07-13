@@ -9,7 +9,7 @@ Tested on .NET 4.7 and .NET 5.0
 * Support for escaping hex characters (\x65 for example)
 * Delay adjustment
 * Hotkeys for stop and start
-* Show stats how many spams sent
+* Show stats on how many spams sent
 
 ## Screenshots
 ![Spamming discord](/Images/screenshot.png)
