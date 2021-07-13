@@ -1,5 +1,5 @@
 # Spammeri
-Feature rich text spammer made in C#.
+Feature rich text spammer made in C#.<br>
 Tested on .NET 4.7 and .NET 5.
 
 ## Features
