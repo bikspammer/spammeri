@@ -1,6 +1,6 @@
 # Spammeri
 Feature rich text spammer made in C#.<br>
-Tested on .NET 4.7 and .NET 5.
+Tested on .NET 4.7 and .NET 5.0
 
 ## Features
 * Emoji spam
