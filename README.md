@@ -9,3 +9,8 @@ Feature rich text spammer made in C#.
 * Delay adjustment
 * Hotkeys for stop and start
 * Show stats how many spams sent
+
+## Screenshots
+![Spamming discord](/Images/screenshot.png)
+![Hotkey configuring](/Images/hotkey.png)
+![Emoji configuring](/Images/emoji.png)
