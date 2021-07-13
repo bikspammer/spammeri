@@ -1,5 +1,5 @@
 # Spammeri
-Feature rich spammer made in C#.
+Feature rich text spammer made in C#.
 
 ## Features
 * Emoji spam
