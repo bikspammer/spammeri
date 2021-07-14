@@ -1,5 +1,6 @@
 # Spammeri
-Feature rich text spammer made in C#.
+Feature rich text spammer made in C#.<br>
+Tested on .NET 4.7 and .NET 5.0
 
 ## Features
 * Emoji spam
@@ -8,4 +9,9 @@ Feature rich text spammer made in C#.
 * Support for escaping hex characters (\x65 for example)
 * Delay adjustment
 * Hotkeys for stop and start
-* Show stats how many spams sent
+* Show stats on how many spams sent
+
+## Screenshots
+![Spamming discord](/Images/screenshot.png)
+![Hotkey configuring](/Images/hotkey.png)
+![Emoji configuring](/Images/emoji.png)
