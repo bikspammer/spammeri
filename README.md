@@ -12,6 +12,6 @@ Tested on .NET 4.7 and .NET 5.0
 * Show stats on how many spams sent
 
 ## Screenshots
-![Spamming discord](/Images/screenshot.png)
+![Spamming discord](/Images/spamming.gif)
 ![Hotkey configuring](/Images/hotkey.png)
 ![Emoji configuring](/Images/emoji.png)
