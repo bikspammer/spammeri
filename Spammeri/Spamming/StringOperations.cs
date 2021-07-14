@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Spammeri
+namespace Spammeri.Spamming
 {
     internal static class StringOperations
     {

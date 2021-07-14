@@ -4,8 +4,8 @@
     <OutputType>WinExe</OutputType>
     <TargetFrameworks>net5.0-windows;net471;</TargetFrameworks>
     <UseWindowsForms>true</UseWindowsForms>
-    <ApplicationManifest>app.manifest</ApplicationManifest>
-    <ApplicationIcon>flash.ico</ApplicationIcon>
+    <ApplicationManifest>Resources\app.manifest</ApplicationManifest>
+    <ApplicationIcon>Resources\flash.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>

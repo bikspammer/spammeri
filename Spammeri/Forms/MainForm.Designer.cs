@@ -1,5 +1,5 @@
 ﻿
-namespace Spammeri
+namespace Spammeri.Forms
 {
     partial class MainForm
     {

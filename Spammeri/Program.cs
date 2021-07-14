@@ -1,13 +1,12 @@
 using System;
 using System.Windows.Forms;
+using Spammeri.Forms;
+using Spammeri.Spamming;
 
 namespace Spammeri
 {
     static class Program
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {

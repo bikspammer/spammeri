@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Spammeri
+namespace Spammeri.Spamming
 {
     internal class STAScheduler : TaskScheduler
     {
@@ -45,7 +45,7 @@ namespace Spammeri
 
         protected override bool TryExecuteTaskInline(Task task, bool taskWasPreviouslyQueued)
         {
-            return false; // Task always queued from MainForm.
+            return false; // Task always queued from MainForm's thread.
         }
         private void StartThread()
         {

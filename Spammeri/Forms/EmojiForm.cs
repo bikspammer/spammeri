@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.IO;
 using System.Windows.Forms;
 
-namespace Spammeri
+namespace Spammeri.Forms
 {
     public partial class EmojiForm : Form
     {

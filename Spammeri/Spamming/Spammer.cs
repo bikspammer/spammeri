@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using IWshRuntimeLibrary;
 
-namespace Spammeri
+namespace Spammeri.Spamming
 {
     internal struct SpammerOptions
     {
