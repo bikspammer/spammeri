@@ -47,6 +47,7 @@ namespace Spammeri.Spamming
         {
             return false; // Task always queued from MainForm's thread.
         }
+
         private void StartThread()
         {
             _staThread.Start();

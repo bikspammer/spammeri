@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace Spammeri.Spamming
 {
@@ -7,20 +8,24 @@ namespace Spammeri.Spamming
     {
         internal static string HexEscape(string str)
         {
-            int index;
+            if (!str.Contains("\\x")) return str;
 
-            if (str.Contains("\\x") || str.Contains("\\0x"))
+            int index, pos = 0;
+            int strlen = str.Length;
+            var builder = new StringBuilder(strlen);
+
+            while (
+                (index = str.IndexOf("\\x", pos)) != -1 &&
+                index + 4 <= strlen
+            )
             {
-                str = str.Replace("\\0x", "\\x");
-
-                while ((index = str.IndexOf("\\x")) != -1)
-                {
-                    var num = (char)Convert.ToInt32(str.Substring(index + 2, 2), 16);
-                    str = $"{str.Substring(0, index)}{num}{str.Substring(index + 4)}";
-                }
+                builder.Append(str, pos, index - pos);
+                builder.Append((char)Convert.ToInt32(str.Substring(index + 2, 2), 16));
+                pos = index + 4;
             }
 
-            return str;
+            builder.Append(str, pos, strlen - pos);
+            return builder.ToString();
         }
 
         internal static List<char[]> GetWords(string str)
@@ -52,7 +57,7 @@ namespace Spammeri.Spamming
                 if (chr == ':')
                 {
                     var end = Array.IndexOf(word, ':', i + 1);
-                    var emoji = (
+                    bool emoji = (
                         end != -1 &&
                         end - i <= 32 &&
                         Array.IndexOf(word, ' ', i, end - i) == -1 &&

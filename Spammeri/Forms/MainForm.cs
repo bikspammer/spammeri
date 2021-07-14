@@ -128,14 +128,7 @@ namespace Spammeri.Forms
 
         private async void Start()
         {
-            if (_enabled) return;
-           
-            // Check if spam-text is empty.
-            if (spamText.TextLength == 0)
-            {
-                MessageBox.Show("SPAM text can not be empty.", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+            if (_enabled || spamText.TextLength == 0) return;
 
             // Set enabled
             _enabled = true;
@@ -164,7 +157,7 @@ namespace Spammeri.Forms
             var ex = await _spamTask;
             if (ex != null)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(this, ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Stop();
             }
         }
