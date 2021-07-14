@@ -38,8 +38,6 @@ namespace Spammeri.Spamming
 
             return STAScheduler.Factory.StartNew(() =>
             {
-                Exception ex = null;
-
                 try
                 {
                     var str = options.ApplyHex ? StringOperations.HexEscape(options.Text) : options.Text;
@@ -58,6 +56,7 @@ namespace Spammeri.Spamming
                             if (applyEmoji)
                             {
                                 builder.Append(options.Emojis[random.Next(options.Emojis.Length)]);
+                                builder.Append(' ');
                             }
 
                             if (options.ApplyMock)
@@ -103,12 +102,13 @@ namespace Spammeri.Spamming
                         watch.Restart();
                     } while (!ct.IsCancellationRequested);
                 }
-                catch (Exception err)
+                catch (Exception ex)
                 {
-                    ex = err;
+                    return ex;
                 }
 
-                return ex;
+                // No errors
+                return null;
             });
         }
     }
