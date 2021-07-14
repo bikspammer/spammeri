@@ -491,7 +491,7 @@ namespace Spammeri.Forms
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1140, 650);
             this.Name = "MainForm";
-            this.Text = "Spammeri  || FINAL SKIDDING VERSION 1.6";
+            this.Text = "Spammeri  || FINAL SKIDDING VERSION 1.7";
             this.TopMost = true;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.groupBox1.ResumeLayout(false);
