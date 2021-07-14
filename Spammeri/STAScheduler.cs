@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Concurrent;
+﻿using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
@@ -46,14 +45,8 @@ namespace Spammeri
 
         protected override bool TryExecuteTaskInline(Task task, bool taskWasPreviouslyQueued)
         {
-            if (taskWasPreviouslyQueued || Thread.CurrentThread != _staThread)
-            {
-                return false;
-            }
-
-            return TryExecuteTask(task);
+            return false; // Task always queued from MainForm.
         }
-
         private void StartThread()
         {
             _staThread.Start();

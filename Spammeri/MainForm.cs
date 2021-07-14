@@ -191,10 +191,6 @@ namespace Spammeri
             _cts?.Dispose();
         }
 
-        private void startBtn_Click(object sender, EventArgs e)
-        {
-            Start();
-        }
         private void startBtn_Click(object sender, MouseEventArgs e)
         {
             Start();

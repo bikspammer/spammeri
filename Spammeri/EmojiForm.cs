@@ -1,4 +1,6 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Spammeri
@@ -29,7 +31,7 @@ namespace Spammeri
 
         private void addBtn_Click(object sender, System.EventArgs e)
         {
-            Emojis.Add(emojiTxt.Text);
+            Emojis.Add(emojiTxt.Text.Trim());
         }
 
         private void removeBtn_Click(object sender, System.EventArgs e)
@@ -40,6 +42,35 @@ namespace Spammeri
         private void emojisList_SelectedIndexChanged(object sender, System.EventArgs e)
         {
             removeBtn.Enabled = emojisList.SelectedIndex != -1;
+        }
+
+        private void clearBtn_Click(object sender, System.EventArgs e)
+        {
+            Emojis.Clear();
+        }
+
+        private void loadBtn_Click(object sender, System.EventArgs e)
+        {
+            try
+            {
+                using (var dialog = new OpenFileDialog())
+                {
+                    dialog.Title = "Open Text File";
+                    dialog.Filter = "TEXT files|*.txt";
+
+                    if (dialog.ShowDialog() == DialogResult.OK)
+                    {
+                        foreach (var line in File.ReadAllLines(dialog.FileName))
+                        {
+                            Emojis.Add(line.Trim());
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

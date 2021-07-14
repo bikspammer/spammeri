@@ -34,13 +34,15 @@ namespace Spammeri
             this.removeBtn = new System.Windows.Forms.Button();
             this.emojiTxt = new System.Windows.Forms.TextBox();
             this.emojisList = new System.Windows.Forms.ListBox();
+            this.clearBtn = new System.Windows.Forms.Button();
+            this.loadBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // addBtn
             // 
             this.addBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.addBtn.Location = new System.Drawing.Point(12, 446);
+            this.addBtn.Location = new System.Drawing.Point(12, 537);
             this.addBtn.Name = "addBtn";
             this.addBtn.Size = new System.Drawing.Size(604, 40);
             this.addBtn.TabIndex = 0;
@@ -53,7 +55,7 @@ namespace Spammeri
             this.removeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.removeBtn.Enabled = false;
-            this.removeBtn.Location = new System.Drawing.Point(12, 492);
+            this.removeBtn.Location = new System.Drawing.Point(12, 583);
             this.removeBtn.Name = "removeBtn";
             this.removeBtn.Size = new System.Drawing.Size(604, 40);
             this.removeBtn.TabIndex = 1;
@@ -65,9 +67,10 @@ namespace Spammeri
             // 
             this.emojiTxt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.emojiTxt.Location = new System.Drawing.Point(12, 409);
+            this.emojiTxt.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.emojiTxt.Location = new System.Drawing.Point(12, 497);
             this.emojiTxt.Name = "emojiTxt";
-            this.emojiTxt.Size = new System.Drawing.Size(604, 31);
+            this.emojiTxt.Size = new System.Drawing.Size(604, 34);
             this.emojiTxt.TabIndex = 2;
             // 
             // emojisList
@@ -80,15 +83,41 @@ namespace Spammeri
             this.emojisList.ItemHeight = 25;
             this.emojisList.Location = new System.Drawing.Point(12, 12);
             this.emojisList.Name = "emojisList";
-            this.emojisList.Size = new System.Drawing.Size(604, 377);
+            this.emojisList.Size = new System.Drawing.Size(604, 477);
             this.emojisList.TabIndex = 3;
             this.emojisList.SelectedIndexChanged += new System.EventHandler(this.emojisList_SelectedIndexChanged);
+            // 
+            // clearBtn
+            // 
+            this.clearBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.clearBtn.Location = new System.Drawing.Point(12, 629);
+            this.clearBtn.Name = "clearBtn";
+            this.clearBtn.Size = new System.Drawing.Size(604, 40);
+            this.clearBtn.TabIndex = 4;
+            this.clearBtn.Text = "Clear All";
+            this.clearBtn.UseVisualStyleBackColor = true;
+            this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
+            // 
+            // loadBtn
+            // 
+            this.loadBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.loadBtn.Location = new System.Drawing.Point(12, 675);
+            this.loadBtn.Name = "loadBtn";
+            this.loadBtn.Size = new System.Drawing.Size(604, 40);
+            this.loadBtn.TabIndex = 5;
+            this.loadBtn.Text = "Load From Text File";
+            this.loadBtn.UseVisualStyleBackColor = true;
+            this.loadBtn.Click += new System.EventHandler(this.loadBtn_Click);
             // 
             // EmojiForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(628, 544);
+            this.ClientSize = new System.Drawing.Size(628, 727);
+            this.Controls.Add(this.loadBtn);
+            this.Controls.Add(this.clearBtn);
             this.Controls.Add(this.emojisList);
             this.Controls.Add(this.emojiTxt);
             this.Controls.Add(this.removeBtn);
@@ -109,5 +138,7 @@ namespace Spammeri
         private System.Windows.Forms.Button removeBtn;
         private System.Windows.Forms.TextBox emojiTxt;
         private System.Windows.Forms.ListBox emojisList;
+        private System.Windows.Forms.Button clearBtn;
+        private System.Windows.Forms.Button loadBtn;
     }
 }
