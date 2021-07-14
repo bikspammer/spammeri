@@ -8,22 +8,28 @@ namespace Spammeri.Spamming
     {
         internal static string HexEscape(string str)
         {
-            if (!str.Contains("\\x")) return str;
+            // Return if no matches found.
+            var index = str.IndexOf("\\x");
+            if (index == -1) return str;
 
-            int index, pos = 0;
-            int strlen = str.Length;
+            // Parse from left to right.
+            var pos = 0;
+            var strlen = str.Length;
             var builder = new StringBuilder(strlen);
 
-            while (
+            // Find all and parse.
+            do
+            {
+                var chr = (char)Convert.ToInt32(str.Substring(index + 2, 2), 16);
+                builder.Append(str, pos, index - pos);
+                builder.Append(chr);
+                pos = index + 4;
+            } while (
                 (index = str.IndexOf("\\x", pos)) != -1 &&
                 index + 4 <= strlen
-            )
-            {
-                builder.Append(str, pos, index - pos);
-                builder.Append((char)Convert.ToInt32(str.Substring(index + 2, 2), 16));
-                pos = index + 4;
-            }
+            );
 
+            // Append remaining.
             builder.Append(str, pos, strlen - pos);
             return builder.ToString();
         }
